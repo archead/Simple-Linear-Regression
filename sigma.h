@@ -9,5 +9,7 @@ int sumx(int data[N][2]);
 int xy(int data[N][2]);
 int x_squared(int data[N][2]);
 int sumy(int data[N][2]);
+float slope(int data[N][2]);
+float intercept(int data[N][2]);
 
 #endif
