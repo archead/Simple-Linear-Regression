@@ -1,6 +1,8 @@
 #ifndef SIGMA_H_
 #define SIGMA_H_
 
+#include<math.h>
+
 #define N 20
 #define H 30
 #define W 32

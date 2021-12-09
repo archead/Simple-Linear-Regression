@@ -1,4 +1,3 @@
-#include <math.h>
 #include "sigma.h"
 
 int sumx(int data[N][2]){
