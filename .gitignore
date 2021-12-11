@@ -2,3 +2,5 @@
 *.o
 main
 .vscode
+LinReg
+*.7z

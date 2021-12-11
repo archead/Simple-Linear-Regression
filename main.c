@@ -1,16 +1,23 @@
-#include <math.h>
 #include <stdio.h>
+#include <math.h>
 #include "sigma.h"
+#include "csv.h"
 
 int main(){
+    
+    int data[N][2];
 
-    int data[N][2] = { // create N data points {x, y}
+    readCSV("data.csv", data);
+
+    /* LEFT HERE FOR DEBUG ONLY!!!
+    int newdata[N][2] = { // create N data points {x, y}
                         {1,2},{3,4},{6,4},{9,10},{12,6},
                         {15,16},{18,19},{21,21},{24,26},{27,29},
                         {2,8},{3,4},{5,2},{8,12},{11,4},
                         {14,7},{16,25},{20,4},{23,21},{28,20}
                     };
-    
+    */
+
     float m, b = 0.0;
     m = (N * xy(data) - sumx(data)*sumy(data)) / (N*x_squared(data) - pow(sumx(data), 2));
     b = (sumy(data) - m*sumx(data)) / N;
