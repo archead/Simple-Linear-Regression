@@ -8,7 +8,7 @@ int main(int arc, char **argv){
     int data[N][2];
 
     readCSV(argv[1], data);
-    
+
     float m = slope(data);
     float b = intercept(data);
     char screen[H][W] ={{' '}}; // create screen buffer
@@ -36,5 +36,10 @@ int main(int arc, char **argv){
         printf("--"); // create border (bottom)
         
     printf("\ny = %fX + %f\n", m, b); // print the slope
+
+    printf("Press any key to exit.\n");
+    getchar();
+
     return 0;
+
 }
