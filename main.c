@@ -8,15 +8,7 @@ int main(int arc, char **argv){
     int data[N][2];
 
     readCSV(argv[1], data);
-
-    /* LEFT HERE FOR DEBUG ONLY!!!
-    int newdata[N][2] = { // create N data points {x, y}
-                        {1,2},{3,4},{6,4},{9,10},{12,6},
-                        {15,16},{18,19},{21,21},{24,26},{27,29},
-                        {2,8},{3,4},{5,2},{8,12},{11,4},
-                        {14,7},{16,25},{20,4},{23,21},{28,20}
-                    };
-    */   
+    
     float m = slope(data);
     float b = intercept(data);
     char screen[H][W] ={{' '}}; // create screen buffer
