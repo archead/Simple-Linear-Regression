@@ -1,4 +1,3 @@
-#include <math.h>
 #include "sigma.h"
 
 int sumx(int data[N][2]){
@@ -27,4 +26,12 @@ int sumy(int data[N][2]){
     for (int i = 0; i < N; i++)
         y_sum += data[i][1];
     return y_sum;
+}
+
+float slope(int data[N][2]){
+    return (N * xy(data) - sumx(data)*sumy(data)) / (N*x_squared(data) - pow(sumx(data), 2));
+}
+
+float intercept(int data[N][2]){
+    return (sumy(data) - slope(data)*sumx(data)) / N;
 }

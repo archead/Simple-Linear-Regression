@@ -16,12 +16,9 @@ int main(){
                         {2,8},{3,4},{5,2},{8,12},{11,4},
                         {14,7},{16,25},{20,4},{23,21},{28,20}
                     };
-    */
-
-    float m, b = 0.0;
-    m = (N * xy(data) - sumx(data)*sumy(data)) / (N*x_squared(data) - pow(sumx(data), 2));
-    b = (sumy(data) - m*sumx(data)) / N;
-
+    */   
+    float m = slope(data);
+    float b = intercept(data);
     char screen[H][W] ={{' '}}; // create screen buffer
 
     for (int i = 0; i < H; i++){ // fill the screen buffer with blanks
@@ -36,15 +33,15 @@ int main(){
         screen[(int)(m*j+b)][j] = '/';
     
     for (int i = H-1; i > 0; i--){ // print graph to console
-        printf("|");
+        printf("|"); // create border (left side)
         for (int j = 0; j < W; j++)
             printf("%c ", screen[i][j]);
         printf("\n");
     }
 
-    printf("L");
+    printf("L"); // create border (corner)
     for (int j = 0; j < W-1; j++)
-        printf("--");
+        printf("--"); // create border (bottom)
         
     printf("\ny = %fX + %f\n", m, b); // print the slope
     return 0;
