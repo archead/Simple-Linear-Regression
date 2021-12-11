@@ -3,11 +3,11 @@
 #include "sigma.h"
 #include "csv.h"
 
-int main(){
+int main(int arc, char **argv){
     
     int data[N][2];
 
-    readCSV("data.csv", data);
+    readCSV(argv[1], data);
 
     /* LEFT HERE FOR DEBUG ONLY!!!
     int newdata[N][2] = { // create N data points {x, y}
